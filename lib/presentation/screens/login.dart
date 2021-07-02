@@ -57,19 +57,9 @@ class _LoginState extends State<Login> {
                 },
                 (_) {
                   debugPrint("Need to navigate to Home page");
-                  // context
-                  //     .read<AuthBloc>()
-                  //     .add(const AuthEvent.authCheckRequested());
                   setState(() {
                     _btnController.success();
                   });
-                  // Future.delayed(
-                  //   const Duration(milliseconds: 2000),
-                  //   () {
-                  //     Navigator.pushReplacement(context,
-                  //         CupertinoPageRoute(builder: (context) => Homepage()));
-                  //   },
-                  // );
                 },
               );
             },

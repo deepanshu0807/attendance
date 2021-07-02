@@ -25,8 +25,6 @@ class _RegisterState extends State<Register> {
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
 
-  UserRole role;
-
   @override
   Widget build(BuildContext context) {
     return AuthNavigator(
@@ -104,64 +102,6 @@ class _RegisterState extends State<Register> {
                       style: text50,
                     ),
                     verticalSpaceLarge,
-                    Container(
-                      width: double.infinity,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: Colors.grey[100],
-                        ),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: DropdownButtonHideUnderline(
-                        child: DropdownButton<UserRole>(
-                          hint: Text(
-                            role?.toValueString() ?? "Who are you ?",
-                            style: text20.copyWith(
-                              fontSize: 20,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_sharp,
-                            size: 35,
-                            color: primaryColor,
-                          ),
-                          style: text20.copyWith(fontSize: 20),
-                          items: [
-                            UserRole.employee(),
-                            UserRole.student(),
-                          ].map(
-                            (val) {
-                              return DropdownMenuItem<UserRole>(
-                                value: val,
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.person,
-                                      color: primaryColor,
-                                    ),
-                                    horizontalSpaceMedium20,
-                                    Text(
-                                      val.toValueString(),
-                                      style: text20.copyWith(fontSize: 20),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ).toList(),
-                          onChanged: (UserRole value) {
-                            setState(() {
-                              role = value;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
-                    verticalSpaceMedium25,
                     Text(
                       " Name",
                       style: text22,
@@ -281,7 +221,7 @@ class _RegisterState extends State<Register> {
                           : () {
                               context
                                   .read<SignupFormBloc>()
-                                  .add(SignupFormEvent.registerPressed(role));
+                                  .add(SignupFormEvent.registerPressed());
                             },
                       child: Text(
                         "Register",

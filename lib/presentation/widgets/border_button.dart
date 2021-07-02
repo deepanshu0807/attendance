@@ -13,13 +13,14 @@ class BorderButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
+      color: Colors.white.withOpacity(0.4),
       minWidth: double.infinity,
       padding: kPadding10.copyWith(left: 20),
       onPressed: ontap,
-      splashColor: Colors.transparent,
+      splashColor: secondaryColor,
       highlightColor: Colors.transparent,
       shape: RoundedRectangleBorder(
-        side: BorderSide(color: Colors.black, width: 2),
+        side: BorderSide(color: Colors.white.withOpacity(0.7), width: 2),
         borderRadius: kBorderR10,
       ),
       child: Row(

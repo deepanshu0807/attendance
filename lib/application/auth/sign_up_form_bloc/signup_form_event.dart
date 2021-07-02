@@ -6,6 +6,5 @@ abstract class SignupFormEvent with _$SignupFormEvent {
   const factory SignupFormEvent.emailChanged(String email) = _EvEmailChanged;
   const factory SignupFormEvent.phoneChanged(String number) = _EvPhoneChanged;
   const factory SignupFormEvent.passwordChanged(String pwd) = EvPasswordChanged;
-  const factory SignupFormEvent.registerPressed(UserRole role) =
-      EvRegisterPressed;
+  const factory SignupFormEvent.registerPressed() = EvRegisterPressed;
 }

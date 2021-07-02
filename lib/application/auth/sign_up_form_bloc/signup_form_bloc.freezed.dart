@@ -42,10 +42,8 @@ class _$SignupFormEventTearOff {
   }
 
 // ignore: unused_element
-  EvRegisterPressed registerPressed(UserRole role) {
-    return EvRegisterPressed(
-      role,
-    );
+  EvRegisterPressed registerPressed() {
+    return const EvRegisterPressed();
   }
 }
 
@@ -61,7 +59,7 @@ mixin _$SignupFormEvent {
     @required Result emailChanged(String email),
     @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
-    @required Result registerPressed(UserRole role),
+    @required Result registerPressed(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -69,7 +67,7 @@ mixin _$SignupFormEvent {
     Result emailChanged(String email),
     Result phoneChanged(String number),
     Result passwordChanged(String pwd),
-    Result registerPressed(UserRole role),
+    Result registerPressed(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -180,7 +178,7 @@ class _$_EvNameChanged with DiagnosticableTreeMixin implements _EvNameChanged {
     @required Result emailChanged(String email),
     @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
-    @required Result registerPressed(UserRole role),
+    @required Result registerPressed(),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
@@ -197,7 +195,7 @@ class _$_EvNameChanged with DiagnosticableTreeMixin implements _EvNameChanged {
     Result emailChanged(String email),
     Result phoneChanged(String number),
     Result passwordChanged(String pwd),
-    Result registerPressed(UserRole role),
+    Result registerPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -323,7 +321,7 @@ class _$_EvEmailChanged
     @required Result emailChanged(String email),
     @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
-    @required Result registerPressed(UserRole role),
+    @required Result registerPressed(),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
@@ -340,7 +338,7 @@ class _$_EvEmailChanged
     Result emailChanged(String email),
     Result phoneChanged(String number),
     Result passwordChanged(String pwd),
-    Result registerPressed(UserRole role),
+    Result registerPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -466,7 +464,7 @@ class _$_EvPhoneChanged
     @required Result emailChanged(String email),
     @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
-    @required Result registerPressed(UserRole role),
+    @required Result registerPressed(),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
@@ -483,7 +481,7 @@ class _$_EvPhoneChanged
     Result emailChanged(String email),
     Result phoneChanged(String number),
     Result passwordChanged(String pwd),
-    Result registerPressed(UserRole role),
+    Result registerPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -609,7 +607,7 @@ class _$EvPasswordChanged
     @required Result emailChanged(String email),
     @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
-    @required Result registerPressed(UserRole role),
+    @required Result registerPressed(),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
@@ -626,7 +624,7 @@ class _$EvPasswordChanged
     Result emailChanged(String email),
     Result phoneChanged(String number),
     Result passwordChanged(String pwd),
-    Result registerPressed(UserRole role),
+    Result registerPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -683,9 +681,6 @@ abstract class $EvRegisterPressedCopyWith<$Res> {
   factory $EvRegisterPressedCopyWith(
           EvRegisterPressed value, $Res Function(EvRegisterPressed) then) =
       _$EvRegisterPressedCopyWithImpl<$Res>;
-  $Res call({UserRole role});
-
-  $UserRoleCopyWith<$Res> get role;
 }
 
 /// @nodoc
@@ -698,64 +693,33 @@ class _$EvRegisterPressedCopyWithImpl<$Res>
 
   @override
   EvRegisterPressed get _value => super._value as EvRegisterPressed;
-
-  @override
-  $Res call({
-    Object role = freezed,
-  }) {
-    return _then(EvRegisterPressed(
-      role == freezed ? _value.role : role as UserRole,
-    ));
-  }
-
-  @override
-  $UserRoleCopyWith<$Res> get role {
-    if (_value.role == null) {
-      return null;
-    }
-    return $UserRoleCopyWith<$Res>(_value.role, (value) {
-      return _then(_value.copyWith(role: value));
-    });
-  }
 }
 
 /// @nodoc
 class _$EvRegisterPressed
     with DiagnosticableTreeMixin
     implements EvRegisterPressed {
-  const _$EvRegisterPressed(this.role) : assert(role != null);
-
-  @override
-  final UserRole role;
+  const _$EvRegisterPressed();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignupFormEvent.registerPressed(role: $role)';
+    return 'SignupFormEvent.registerPressed()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SignupFormEvent.registerPressed'))
-      ..add(DiagnosticsProperty('role', role));
+      ..add(DiagnosticsProperty('type', 'SignupFormEvent.registerPressed'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is EvRegisterPressed &&
-            (identical(other.role, role) ||
-                const DeepCollectionEquality().equals(other.role, role)));
+    return identical(this, other) || (other is EvRegisterPressed);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(role);
-
-  @override
-  $EvRegisterPressedCopyWith<EvRegisterPressed> get copyWith =>
-      _$EvRegisterPressedCopyWithImpl<EvRegisterPressed>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -764,14 +728,14 @@ class _$EvRegisterPressed
     @required Result emailChanged(String email),
     @required Result phoneChanged(String number),
     @required Result passwordChanged(String pwd),
-    @required Result registerPressed(UserRole role),
+    @required Result registerPressed(),
   }) {
     assert(nameChanged != null);
     assert(emailChanged != null);
     assert(phoneChanged != null);
     assert(passwordChanged != null);
     assert(registerPressed != null);
-    return registerPressed(role);
+    return registerPressed();
   }
 
   @override
@@ -781,12 +745,12 @@ class _$EvRegisterPressed
     Result emailChanged(String email),
     Result phoneChanged(String number),
     Result passwordChanged(String pwd),
-    Result registerPressed(UserRole role),
+    Result registerPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (registerPressed != null) {
-      return registerPressed(role);
+      return registerPressed();
     }
     return orElse();
   }
@@ -827,10 +791,7 @@ class _$EvRegisterPressed
 }
 
 abstract class EvRegisterPressed implements SignupFormEvent {
-  const factory EvRegisterPressed(UserRole role) = _$EvRegisterPressed;
-
-  UserRole get role;
-  $EvRegisterPressedCopyWith<EvRegisterPressed> get copyWith;
+  const factory EvRegisterPressed() = _$EvRegisterPressed;
 }
 
 /// @nodoc

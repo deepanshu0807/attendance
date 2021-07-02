@@ -41,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Center(
                 child: Text(
-                  "Employee",
+                  "Attendance",
                   style: text50.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
