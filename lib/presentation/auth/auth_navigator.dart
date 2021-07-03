@@ -38,7 +38,9 @@ class AuthNavigator extends StatelessWidget {
                     Navigator.pushReplacement(
                         context,
                         CupertinoPageRoute(
-                            builder: (context) => LandingPage()));
+                            builder: (context) => LandingPage(
+                                  user: authUser.user,
+                                )));
                   },
                 );
               },

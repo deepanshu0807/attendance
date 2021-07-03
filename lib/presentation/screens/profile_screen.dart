@@ -78,7 +78,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         });
                   },
                   style: OutlinedButton.styleFrom(
-                    backgroundColor: primaryColor,
+                    backgroundColor: secondaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: kBorderR20,
                     ),
@@ -211,7 +211,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                       Navigator.pop(context);
                     },
                     shape: kRoundedShape,
-                    color: primaryColor,
+                    color: secondaryColor.withOpacity(0.4),
                     child: Text(
                       "Cancel",
                       style: text20,

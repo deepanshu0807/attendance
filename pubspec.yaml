@@ -21,7 +21,12 @@ dependencies:
   google_fonts:
   rounded_loading_button:
   flutter_spinkit:
-  auto_route:
+  camera: ^0.7.0+4
+  fluttertoast: 
+  path_provider:
+  video_player:
+  quiver:
+  image_picker:
 
 dev_dependencies:
   flutter_test:

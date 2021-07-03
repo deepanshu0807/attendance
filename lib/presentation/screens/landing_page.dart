@@ -1,6 +1,7 @@
 import 'package:attendance/application/user_details_watcher/user_details_watcher_bloc.dart';
 import 'package:attendance/presentation/auth/auth_navigator.dart';
 import 'package:attendance/presentation/screens/profile_screen.dart';
+import 'package:attendance/presentation/screens/recording_widget.dart';
 import 'package:attendance/presentation/utils/utility.dart';
 import 'package:attendance/presentation/widgets/loading.dart';
 import 'package:attendance_shared/attendance_shared.dart';
@@ -8,7 +9,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({Key key}) : super(key: key);
+  final AttendanceUser user;
+  const LandingPage({Key key, this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,43 +20,14 @@ class LandingPage extends StatelessWidget {
         padding: kPadding20.copyWith(top: 30),
         height: screenHeight(context),
         width: screenWidth(context),
-        // decoration: BoxDecoration(
-        //   gradient: gradientDecoration,
-        // ),
-
         child: Column(
           children: [
             UserDataContainer(),
             verticalSpaceMedium30,
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15.w),
-              child: Row(
-                mainAxisAlignment: mainSB,
-                children: [
-                  Expanded(
-                    flex: 4,
-                    child: Text(
-                      "Date",
-                      style: text18.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Text(
-                      "Time",
-                      style: text18.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Text(
-                      "Record",
-                      style: text18.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            Expanded(
+                child: RecordingWidget(
+              user: user,
+            )),
           ],
         ),
       ),
@@ -75,12 +48,13 @@ class UserDataContainer extends StatelessWidget {
           loadFailure: (_) => Center(child: Loading()),
           loadSuccess: (user) {
             final data = user.storeUser;
+
             return Container(
               width: double.infinity,
               margin: kPadding10.copyWith(left: 0, right: 0),
               padding: kPadding10.copyWith(left: 20),
               decoration: containerDecoration(
-                  Colors.white, primaryColor.withOpacity(0.7)),
+                  Colors.white, primaryColor.withOpacity(0.4)),
               child: Row(
                 mainAxisAlignment: mainSB,
                 children: [
@@ -106,7 +80,7 @@ class UserDataContainer extends StatelessWidget {
                                           )));
                             },
                             style: OutlinedButton.styleFrom(
-                              backgroundColor: primaryColor,
+                              backgroundColor: secondaryColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: kBorderR20,
                               ),

@@ -1,5 +1,6 @@
 import 'package:attendance/presentation/utils/utility.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 //Decorations related
 
@@ -68,4 +69,13 @@ String getFormattedTime(DateTime day) {
       getDoubleDigit(day.minute.toString());
 
   return time;
+}
+
+showToastMessage(String msg, Color color) {
+  return Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.CENTER,
+      backgroundColor: color,
+      textColor: Colors.white);
 }
